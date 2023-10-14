@@ -1,11 +1,40 @@
 /* eslint-disable */
-import "bootstrap";
+
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function() {
-  //write your code here
+window.onload = () => {
+  // Llama a generateExcuse al cargar la página
+  document.querySelector("#the-excuse").innerHTML = generateExcuse();
   console.log("Hello Rigo from the console!");
+};
+let generateExcuse = () => {
+  let who = [
+    "The dog",
+    "My grandma",
+    "My neighbour's cat ",
+    "My unicorn",
+    "My little brother"
+  ];
+  let action = ["ate", "peed", "crushed", "broke", "ripped"];
+  let what = ["my homework", "the keys", "my paper", "the project"];
+  let when = [
+    "before class",
+    "with his nose",
+    "with an axe",
+    "during my lunch",
+    "while I was sleeping"
+  ];
+  let whoIndex = Math.floor(Math.random() * who.length);
+  let actionIndex = Math.floor(Math.random() * action.length);
+  let whatIndex = Math.floor(Math.random() * what.length);
+  let whenIndex = Math.floor(Math.random() * when.length);
+  return (
+    who[whoIndex] +
+    " " +
+    action[actionIndex] +
+    " " +
+    what[whatIndex] +
+    " " +
+    when[whenIndex]
+  );
 };
